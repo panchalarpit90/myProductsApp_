@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+           <variable
+               name="viewModel"
+               type="com.example.marsrealestate.overview.OverviewViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/background"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.marsrealestate.MainActivity">
+        <TextView
+            android:id="@+id/MarsRealestate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:fontFamily="@font/latolight"
+            android:text="Mars RealEstate"
+            android:paddingStart="20dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:textSize="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="6dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/MarsRealestate">
+            <Button
+                android:id="@+id/showAllBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:background="@drawable/button_bg"
+                android:backgroundTint="@color/brown"
+                android:textColor="@color/white"
+                android:paddingStart="8dp"
+                android:textAllCaps="false"
+                android:paddingEnd="8dp"
+                android:layout_marginStart="20dp"
+                android:text="Show all"
+                android:fontFamily="@font/latoregular"
+                app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/rentBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_bg"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textAllCaps="false"
+                android:text="Rent"
+                android:fontFamily="@font/latoregular"
+                app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/buyBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/card"
+                android:textAllCaps="false"
+                android:background="@drawable/button_bg"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Buy"
+                android:fontFamily="@font/latoregular"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photos_grid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            app:listData="@{viewModel.properties}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:spanCount="2"
+            tools:itemCount="16"
+            tools:listitem="@layout/grid_item_view" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:apiStatus="@{viewModel.status}"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
