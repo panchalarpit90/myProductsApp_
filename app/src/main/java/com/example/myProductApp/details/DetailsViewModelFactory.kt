@@ -1,14 +1,15 @@
-package com.example.marsrealestate.details
+package com.example.myProductApp.details
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.marsrealestate.network.MarsProperty
+import com.example.myProductApp.network.Product
 
-class DetailsViewModelFactory(private val marsProperty: MarsProperty, private val application: Application) : ViewModelProvider.Factory {
+class DetailsViewModelFactory(private val product: Product, private val application: Application) :
+    ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(DetailsViewModel::class.java)) {
-            return DetailsViewModel(marsProperty, application) as T
+            return DetailsViewModel(product, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

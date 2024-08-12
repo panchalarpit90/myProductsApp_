@@ -1,4 +1,6 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android" android:height="24dp" android:viewportHeight="1400" android:viewportWidth="1400" android:width="24dp">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="8dp" android:viewportHeight="1400"
+    android:viewportWidth="1400" android:width="8dp">
     <group
         android:translateX="500" android:translateY="500">
     <path android:fillColor="@color/card" android:pathData="M97.5,165c0,-8.28 -6.72,-15 -15,-15h-60c-8.28,0 -15,6.72 -15,15s6.72,15 15,15h60C90.78,180 97.5,173.28 97.5,165z"/>

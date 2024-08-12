@@ -1,4 +1,4 @@
-package com.example.marsrealestate
+package com.example.myProductApp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

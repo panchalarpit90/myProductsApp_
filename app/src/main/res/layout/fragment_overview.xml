@@ -4,108 +4,140 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-           <variable
-               name="viewModel"
-               type="com.example.marsrealestate.overview.OverviewViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.example.myProductApp.overview.OverviewViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@color/background"
         android:layout_height="match_parent"
-        tools:context="com.example.android.marsrealestate.MainActivity">
+        android:background="@color/white"
+        tools:context="com.example.myProductApp.overview.OverviewFragment">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_60sdp"
+            app:shimmerVisibility="@{viewModel.status}"
+            app:shimmer_duration="800">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <include
+                        layout="@layout/grid_item_view_shimmer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <TextView
             android:id="@+id/MarsRealestate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/background"
-            android:fontFamily="@font/latolight"
-            android:text="Mars RealEstate"
-            android:paddingStart="20dp"
-            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:textSize="36dp"
+            android:fontFamily="@font/latolight"
+            android:text="@string/myproduct_app"
+            android:textColor="@color/background"
+            android:textSize="@dimen/_24ssp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="6dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/MarsRealestate">
-            <Button
-                android:id="@+id/showAllBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:background="@drawable/button_bg"
-                android:backgroundTint="@color/brown"
-                android:textColor="@color/white"
-                android:paddingStart="8dp"
-                android:textAllCaps="false"
-                android:paddingEnd="8dp"
-                android:layout_marginStart="20dp"
-                android:text="Show all"
-                android:fontFamily="@font/latoregular"
-                app:layout_constraintStart_toStartOf="parent" />
-            <Button
-                android:id="@+id/rentBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:textSize="12dp"
-                android:textColor="@color/white"
-                android:background="@drawable/button_bg"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:textAllCaps="false"
-                android:text="Rent"
-                android:fontFamily="@font/latoregular"
-                app:layout_constraintStart_toStartOf="parent" />
-            <Button
-                android:id="@+id/buyBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:textSize="12dp"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/card"
-                android:textAllCaps="false"
-                android:background="@drawable/button_bg"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:text="Buy"
-                android:fontFamily="@font/latoregular"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </LinearLayout>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/photos_grid"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:padding="10dp"
-            app:listData="@{viewModel.properties}"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@id/MarsRealestate"
             app:spanCount="2"
-            tools:itemCount="16"
             tools:listitem="@layout/grid_item_view" />
+
         <ImageView
+            android:id="@+id/status_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:apiStatus="@{viewModel.status}"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/MarsRealestate" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

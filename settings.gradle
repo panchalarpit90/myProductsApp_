@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Mars Real Estate"
+rootProject.name = "myProductApp"
 include ':app'

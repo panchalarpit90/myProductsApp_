@@ -11,7 +11,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.marsrealestate"
+        applicationId 'com.example.myProductApp'
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -61,4 +61,11 @@ dependencies {
     implementation libs.lottie
     implementation libs.androidx.navigation.fragment.ktx.v235
     implementation libs.androidx.navigation.ui.ktx.v235
+    implementation libs.sdp.android
+    implementation libs.ssp.android
+    implementation libs.material
+    implementation libs.shimmer
+
+
+
 }

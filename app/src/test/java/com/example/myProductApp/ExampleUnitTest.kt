@@ -1,4 +1,4 @@
-package com.example.marsrealestate
+package com.example.myProductApp
 
 import org.junit.Test
 
